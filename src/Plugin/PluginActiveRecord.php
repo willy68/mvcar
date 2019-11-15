@@ -1,6 +1,6 @@
 <?php
 	namespace Library\Plugin;
-	require_once '../Library/ActiveRecord/ActiveRecord.php';
+	require_once __DIR__.'/../ActiveRecord/ActiveRecord.php';
 
 	class PluginActiveRecord extends AbstractPlugin
 	{
@@ -31,7 +31,7 @@
 				$directories = $this->cfg['directories'];
 			}
 			else {
-				$directories = array(__DIR__.'/../../Library/Models');
+				$directories = array(__DIR__.'/../../src/Models');
 			}
 
 			\ActiveRecord\Config::initialize(function($cfg) use ($connections, $directories){
